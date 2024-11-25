@@ -1,0 +1,21 @@
+version: 0.2
+
+phases:
+  install:
+    runtime-versions:
+      python: 3.x
+
+  pre_build:
+    commands:
+      - chmod +x ./install-terraform.sh 
+      - chmod +x ./configure-profile.sh
+      - chmod +x ./apply-terraform.sh
+      - ./install-terraform.sh
+      - ./configure-profile.sh
+    
+      
+      
+  build:
+    commands:
+      - ./apply-terraform.sh
+      
